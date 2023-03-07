@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<meta name="robots" content="FOLLOW, INDEX" />
+
+		<!-- Page title -->
+		<title>UniCreditGroup - Homepage</title>
+		<!-- Social Media Tags -->
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="" />
+		<meta name="twitter:title" content="IT" />
+		<meta name="twitter:creator" content="" />
+
+		<!-- Open Graph data -->
+		<meta property="og:title" content="IT" />
+		<meta property="og:type" content="article" />
+		<meta
+			property="og:url"
+			content="http://www.unicreditgroup.eu/it.html"
+		/>
+		<meta property="og:site_name" content="UnicreditGroup.eu" />
+		<meta
+			property="article:modified_time"
+			content="2020-11-27T12:48:15.710+01:00"
+		/>
+		<meta property="article:section" content="Banking" />
+
+		<!-- LIBRARY -->
+		<link
+			rel="icon"
+			type="image/vnd.microsoft.icon"
+			href="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/favicon.ico"
+		/>
+		<link
+			rel="shortcut icon"
+			type="image/vnd.microsoft.icon"
+			href="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/favicon.ico"
+		/>
+		<!-- ******************* END NEW LIBRARY CSS - NEW COMPONENTS ******************* -->
+		<sly
+			data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+			data-sly-call="${clientlib.css @ categories=['Unicredit.base']}"
+		/>
+	</head>
+	<body>
+		<sly data-sly-resource="${'/content/ucs-exercise-alice/homepage/jcr:content/homepage' @ resourceType='ucs-exercise-alice/components/content/header'}"/>
+
+		<sly data-sly-include="/libs/wcm/core/components/init/init.jsp" />
+		
+		<sly data-sly-resource="${'parsys' @ resourceType='wcm/foundation/components/parsys'}"/>
+			
+		<sly data-sly-resource="${'/content/ucs-exercise-alice/homepage/jcr:content/footer' @ resourceType='ucs-exercise-alice/components/content/footer'}"/>
+
+		<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.js @ categories=['Unicredit.base']}"/>
+	</body>
+</html>

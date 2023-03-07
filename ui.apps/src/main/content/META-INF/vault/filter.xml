@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/ucs-exercise-alice/clientlibs"/>
+    <filter root="/apps/ucs-exercise-alice/components"/>
+    <filter root="/apps/ucs-exercise-alice/templates"/>
+    <filter root="/apps/ucs-exercise-alice/i18n"/>
+</workspaceFilter>

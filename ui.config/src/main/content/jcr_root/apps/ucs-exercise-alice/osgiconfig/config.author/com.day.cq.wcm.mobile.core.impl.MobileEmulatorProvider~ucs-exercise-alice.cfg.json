@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "ucs-exercise-alice/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

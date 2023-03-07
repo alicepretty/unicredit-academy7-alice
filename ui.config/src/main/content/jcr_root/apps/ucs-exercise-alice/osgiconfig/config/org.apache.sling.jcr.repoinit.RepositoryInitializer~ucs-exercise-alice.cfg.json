@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/ucs-exercise-alice",
+        "create path (nt:unstructured) /content/dam/ucs-exercise-alice/jcr:content",
+        "set properties on /content/dam/ucs-exercise-alice/jcr:content\n  set cq:conf{String} to /conf/ucs-exercise-alice\n  set jcr:title{String} to \"Unicredit Site\"\nend"
+    ]
+}

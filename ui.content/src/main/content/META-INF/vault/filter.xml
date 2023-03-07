@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/ucs-exercise-alice" mode="merge"/>
+    <filter root="/content/ucs-exercise-alice" mode="merge"/>
+    <filter root="/content/dam/ucs-exercise-alice" mode="merge">
+        <exclude pattern="/content/dam/ucs-exercise-alice(/.*)?"/>
+        <include pattern="/content/dam/ucs-exercise-alice/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/ucs-exercise-alice/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/ucs-exercise-alice" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,56 @@
+<!-- ******************* START RELATED HASHTAG LIST ******************* -->
+<div
+  class="relatedHashtag container-fixed"
+  data-sly-use.tags="it.codeland.alice.core.models.HashTagModel"
+>
+  <div class="relatedHashtag__bar container">
+    <div class="bar__title text--subtitle" data-sly-test="${properties.title}">
+      ${properties.title}:
+    </div>
+    <div
+      class="bar__title text--subtitle"
+      data-sly-test="${wcmmode.edit && !properties.title}"
+    >
+      [CONFIGURE RelatedHashTag]
+    </div>
+    <div class="bar__list">
+      <div
+        data-sly-repeat="${tags.items}"
+        data-order="${properties.order}"
+        data-sort="${properties.sort}"
+        data-hashtag="${item}"
+        data-maxarticle="${properties.maxArticle}"
+        class="bar__item text--body"
+      >
+        #${item} ${properties.path}
+      </div>
+    </div>
+  </div>
+  <div class="relatedHashtag__result container">
+    <div class="result__cta">
+      <div class="result__number">
+        <span class="number text--paragraph-title">0</span>
+        <span class="results text--body"
+          >${properties.totalLabel || "results"}</span
+        >
+      </div>
+      <div class="result__close">
+        <span class="text--label">${properties.closeLabel || "CHIUDI"}</span>
+        <span class="close icon icon-close"></span>
+      </div>
+    </div>
+    <div class="result__cards">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
+
+        <!-- pagination -->
+        <div
+          class="swiper-pagination"
+          data-hero-pagination
+          data-pagination
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ******************* END RELATED HASHTAG LIST ******************* -->

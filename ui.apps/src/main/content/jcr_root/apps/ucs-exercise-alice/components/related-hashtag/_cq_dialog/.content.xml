@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Related Hashtag Configuration"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <textTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./title"/>
+                            <tags
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                fieldDescription="Please add no more than 4 tags"
+                                fieldLabel="Tags"
+                                multiple="{Boolean}true"
+                                name="./tags"
+                                rootPath="/content/cq:tags/ucs-exercise-alice"/>
+                            <totalArticles
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Number of Articles"
+                                name="./maxArticle"/>
+                            <sort
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="sort"
+                                name="./sort">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <ASC
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ASC"
+                                        value="ASC"/>
+                                    <DESC
+                                        jcr:primaryType="nt:unstructured"
+                                        text="DESC"
+                                        value="DESC"/>
+                                </items>
+                            </sort>
+                            <order
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="order"
+                                name="./order">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <date
+                                        jcr:primaryType="nt:unstructured"
+                                        text="date"
+                                        value="date"/>
+                                    <Node
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Article Created"
+                                        value="cq:created"/>
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        text="title"
+                                        value="text"/>
+                                </items>
+                            </order>
+                            <closeLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Close label"
+                                name="./closeLabel"/>
+                        </items>
+                    </column>
+                </items>
+            </textTab>
+        </items>
+    </content>
+</jcr:root>

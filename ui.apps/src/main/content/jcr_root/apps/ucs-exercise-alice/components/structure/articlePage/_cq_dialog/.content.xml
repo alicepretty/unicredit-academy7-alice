@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">  
+                                    <title jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title jcr:primaryType="nt:unstructured"
+                                                name="./jcr:title"
+                                                fieldLabel="Title"
+                                                required="{Boolean}true"
+                                                renderReadOnly="{Boolean}true"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+
+                                            <pagename jcr:primaryType="nt:unstructured"
+                                                name="pageName"
+                                                fieldLabel="Name"
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}true"
+                                                validation="admin.pagename"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            
+                                            <tags
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                fieldLabel="Tags"
+                                                multiple="{Boolean}true"
+                                                name="./cq:tags"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                rootPath="/content/cq:tags/ucs-exercise-alice"/>
+                                            <tagsShowOnCreate
+                                                cq:hideOnEdit="{Boolean}true"
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                fieldLabel="Tags"
+                                                multiple="{Boolean}true"
+                                                name="./cq:tags"
+                                                rootPath="/content/cq:tags/ucs-exercise-alice"
+                                                granite:comment="Handled by a custom POST servlet for the Create Page case"/>
+                                        </items>
+                                    </title>
+                                </items>
+                            </column>
+                        </items>                        
+                    </basic>
+                    <article
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Article-details"
+                        sling:orderBefore="advanced"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            margin="{Boolean}false"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+
+                                    <details
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Article Information"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <date
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                fieldLabel="Article date"
+                                                name="./date"
+                                                required="{Boolean}true"
+                                                type="date"/>
+                                            <image
+                                                cq:showOnCreate="true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Article image"
+                                                name="./image"
+                                                required="{Boolean}true"
+                                                rootPath="/content/dam/ucs-exercise-alice"/>
+                                            <text
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Article title"
+                                                name="./text"
+                                                required="true"/>
+                                        </items>
+                                    </details>
+                                </items>
+                            </column>
+                        </items>
+                    </article>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

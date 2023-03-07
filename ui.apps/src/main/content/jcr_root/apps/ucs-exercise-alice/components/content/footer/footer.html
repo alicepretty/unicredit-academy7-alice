@@ -1,0 +1,38 @@
+
+<body>
+   <!-- ******************* START FOOTER COMPONENT ******************* -->
+  <footer class="footer ucg-icons__newPackage">
+    <div class="footer__wrap container">
+      <div class="footer__upper">
+        <div >
+           <div data-sly-resource="${'footer-main' @ resourceType='ucs-exercise-alice/components/content/footer-main'}" data-sly-unwrap></div>
+        </div>
+        <div>
+          <div data-sly-resource="${'footer-last' @ resourceType='ucs-exercise-alice/components/content/footer-last'}" data-sly-unwrap></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__col">
+           <div data-sly-unwrap="${!wcmmode.edit}">
+            <sly  class="footer__logo" data-sly-resource="${'footerlogo' @ resourceType='ucs-exercise-alice/components/content/footerlogo'}" data-sly-unwrap></sly>
+           </div>
+           <div class="footer__copy">
+          <sly  data-sly-resource="${'footer-copy' @ resourceType='ucs-exercise-alice/components/content/footer-copy'}" data-sly-unwrap></sly>
+           </div>
+          </div>
+        <div class="footer__col">
+          <div class="footer__socials">
+           <div data-sly-resource="${'footer-link' @ resourceType='ucs-exercise-alice/components/content/footer-link'}" data-sly-unwrap></div>
+          </div>
+          <div >
+             <div data-sly-resource="${'footer-utils' @ resourceType='ucs-exercise-alice/components/content/footer-utils'}" data-sly-unwrap></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="path/to/clientlib-base.js"></script>
+
+</body>
+</html>

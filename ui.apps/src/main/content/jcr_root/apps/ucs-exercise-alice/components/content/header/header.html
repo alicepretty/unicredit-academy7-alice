@@ -1,0 +1,180 @@
+
+		<header class="header ucg-icons__newPackage">
+			<nav class="navbar container-fixed">
+				<div class="navbar__zero-level">
+					<a class="navbar__logo" href="#">
+						<div
+							data-sly-resource="${'headerlogo' @ resourceType='ucs-exercise-alice/components/content/imagelogo'}"
+							data-sly-unwrap
+						></div>
+					</a>
+					<div class="navbar__links">
+						<div
+							data-sly-resource="${'nav-link' @ resourceType='ucs-exercise-alice/components/content/nav-link'}"
+							data-sly-unwrap
+						></div>
+					</div>
+					<div>
+						<sly
+							data-sly-resource="${'nav-entry-point' @ resourceType='ucs-exercise-alice/components/content/nav-entry-point'}"
+							data-sly-unwrap
+						></sly>
+					</div>
+				</div>
+				<sly
+					data-sly-use.model="it.codeland.alice.core.models.HeaderNav"
+				/>
+				<div class="navbar__hamburger">
+					<div class="navbar__first-level">
+						<div class="navbar__back text--label">
+							<div class="icon icon-back"></div>
+							<span>BACK</span>
+						</div>
+						<div
+							class="first-level__items"
+							data-sly-list="${model.firstLevelItems.listChildren}"
+						>
+							<div
+								data-nav-1="${item.name}"
+								class="first-level__item ${item.name}"
+								href="${item.path}.html"
+							>
+								<span
+									data-sly-test="${!item.hideInNav}"
+									class="item__text text--label"
+									>${item.title}</span
+								>
+								<span class="icon icon-forth"></span>
+							</div>
+						</div>
+
+						<div class="navbar__languages">
+							<div class="languages__selector">
+								<p class="selector__text text--label">ITA</p>
+								<span class="icon icon-down"></span>
+								<div class="selector__items">
+									<a
+										class="selector__item selector__item--active text--label"
+										data-lang="ITA"
+										data-lang-dk="ITALIANO"
+										data-lang-m="IT"
+										href="#"
+										>ITALIANO</a
+									>
+									<a
+										class="selector__item text--label"
+										data-lang="ENG"
+										href="#"
+										data-lang-dk="ENGLISH"
+										data-lang-m="EN"
+										>ENGLISH</a
+									>
+									<a
+										class="selector__item selector__item--disabled text--label"
+										data-lang="DE"
+										data-lang-dk="DEUTSCHE"
+										data-lang-m="DE"
+										href="#"
+										>DEUTSCHE</a
+									>
+								</div>
+							</div>
+						</div>
+						<div
+							class="navbar__second-level"
+							data-sly-list="${model.firstLevelItems.listChildren}"
+						>
+							<div
+								class="second-level__items ${item.name}"
+								data-nav-2="${item.name}"
+							>
+								<div class="container">
+									<a
+										class="second-level__item--title text--paragraph-title"
+										href="${item.path}.html"
+									>
+										${item.title}
+									</a>
+									<sly data-sly-repeat="${item.listChildren}">
+										<a
+											data-sly-test="${!item.hideInNav}"
+											class="second-level__item text--body"
+											href="${item.path}.html"
+											>${item.title}</a
+										>
+									</sly>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="hamburger">
+				<div class="icon"></div>
+			</div>
+			<!-- ******************* START SEARCH OVERLAY  COMPONENT ******************* -->
+			<aside class="ucg-search">
+				<div class="ucg-search__wrap">
+					<span class="ucg-search--close icon icon-close"></span>
+					<div class="panel ucg_search">
+						<div class="container">
+							<input
+								class="findAsYouType"
+								type="text"
+								name="querySearch"
+								data-resultspage="/content/ucs-exercise-alicegroup-eu/it/search.html"
+								placeholder="Typing"
+								data-threshold="3"
+								data-lang="it"
+							/>
+							<span class="icon icon-search"></span>
+						</div>
+						<div class="searchSuggestion">
+							<div class="autocomplete-suggestions">
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="0"
+								>
+									Typing
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="0"
+								>
+									Typing <strong>suggestion two</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="1"
+								>
+									Typing <strong>suggestion three</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="2"
+								>
+									Typing <strong>suggestion four</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="3"
+								>
+									Typing <strong>suggestion five</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="4"
+								>
+									Typing <strong>suggestion six</strong>
+								</div>
+							</div>
+						</div>
+						<button class="buttonLast button button--arrow">
+							MORE DETAILS
+						</button>
+					</div>
+				</div>
+			</aside>
+			<!-- ******************* END OF SEARCH OVERLAY COMPONENT ******************* -->
+		</header>
+		
