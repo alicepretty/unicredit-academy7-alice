@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/Unicredit/clientlibs"/>
+    <filter root="/apps/Unicredit/components"/>
+    <filter root="/apps/Unicredit/i18n"/>
+    <filter root="/apps/Unicredit/templates"/>
+</workspaceFilter>

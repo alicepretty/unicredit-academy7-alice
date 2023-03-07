@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<meta name="robots" content="FOLLOW, INDEX" />
+
+		<!-- Page title -->
+		<title>UniCreditGroup - Homepage</title>
+		<!-- Social Media Tags -->
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="" />
+		<meta name="twitter:title" content="IT" />
+		<meta name="twitter:creator" content="" />
+
+		<!-- Open Graph data -->
+		<meta property="og:title" content="IT" />
+		<meta property="og:type" content="article" />
+		<meta
+			property="og:url"
+			content="http://www.unicreditgroup.eu/it.html"
+		/>
+		<meta property="og:site_name" content="UnicreditGroup.eu" />
+		<meta
+			property="article:modified_time"
+			content="2020-11-27T12:48:15.710+01:00"
+		/>
+		<meta property="article:section" content="Banking" />
+
+		<!-- LIBRARY -->
+		<link
+			rel="icon"
+			type="image/vnd.microsoft.icon"
+			href="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/favicon.ico"
+		/>
+		<link
+			rel="shortcut icon"
+			type="image/vnd.microsoft.icon"
+			href="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/favicon.ico"
+		/>
+		<link
+			rel="stylesheet"
+			href="old-clientlibs/general.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="old-clientlibs/fonts.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/clientlibs/forms.min.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/clientlibs/page/home.min.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://www.unicreditgroup.eu/etc/designs/unicreditgroupn/clientlibs/last-include.min.css"
+			type="text/css"
+		/>
+
+		<!-- ******************* START NEW LIBRARY CSS - NEW COMPONENTS ******************* -->
+		<link
+			rel="stylesheet"
+			href="plugin/css/Chart.min.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="plugin/css/swiper.min.css"
+			type="text/css"
+		/>
+		<!-- STYLE -->
+		<link rel="stylesheet" href="style/css/main.css" type="text/css" />
+
+		<!-- ******************* END NEW LIBRARY CSS - NEW COMPONENTS ******************* -->
+		<sly
+			data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+			data-sly-call="${clientlib.css @ categories=['Unicredit.base']}"
+		/>
+	</head>
+	<body>
+		<header class="header ucg-icons__newPackage">
+			<nav class="navbar container-fixed">
+				<div class="navbar__zero-level">
+					<a class="navbar__logo" href="#">
+						<div
+							data-sly-resource="${'headerlogo' @ resourceType='Unicredit/components/content/imagelogo'}"
+							data-sly-unwrap
+						></div>
+					</a>
+					<div class="navbar__links">
+						<div
+							data-sly-resource="${'nav-link' @ resourceType='Unicredit/components/content/nav-link'}"
+							data-sly-unwrap
+						></div>
+					</div>
+					<div>
+						<sly
+							data-sly-resource="${'nav-entry-point' @ resourceType='Unicredit/components/content/nav-entry-point'}"
+							data-sly-unwrap
+						></sly>
+					</div>
+				</div>
+				<sly
+					data-sly-use.model="it.codeland.academy7.unicredit.alice.core.models.HeaderNav"
+				/>
+				<div class="navbar__hamburger">
+					<div class="navbar__first-level">
+						<div class="navbar__back text--label">
+							<div class="icon icon-back"></div>
+							<span>BACK</span>
+						</div>
+						<div
+							class="first-level__items"
+							data-sly-list="${model.firstLevelItems.listChildren}"
+						>
+							<div
+								data-nav-1="${item.name}"
+								class="first-level__item ${item.name}"
+								href="${item.path}.html"
+							>
+								<span
+									data-sly-test="${!item.hideInNav}"
+									class="item__text text--label"
+									>${item.title}</span
+								>
+								<span class="icon icon-forth"></span>
+							</div>
+						</div>
+
+						<div class="navbar__languages">
+							<div class="languages__selector">
+								<p class="selector__text text--label">ITA</p>
+								<span class="icon icon-down"></span>
+								<div class="selector__items">
+									<a
+										class="selector__item selector__item--active text--label"
+										data-lang="ITA"
+										data-lang-dk="ITALIANO"
+										data-lang-m="IT"
+										href="#"
+										>ITALIANO</a
+									>
+									<a
+										class="selector__item text--label"
+										data-lang="ENG"
+										href="#"
+										data-lang-dk="ENGLISH"
+										data-lang-m="EN"
+										>ENGLISH</a
+									>
+									<a
+										class="selector__item selector__item--disabled text--label"
+										data-lang="DE"
+										data-lang-dk="DEUTSCHE"
+										data-lang-m="DE"
+										href="#"
+										>DEUTSCHE</a
+									>
+								</div>
+							</div>
+						</div>
+						<div
+							class="navbar__second-level"
+							data-sly-list="${model.firstLevelItems.listChildren}"
+						>
+							<div
+								class="second-level__items ${item.name}"
+								data-nav-2="${item.name}"
+							>
+								<div class="container">
+									<a
+										class="second-level__item--title text--paragraph-title"
+										href="${item.path}.html"
+									>
+										${item.title}
+									</a>
+									<sly data-sly-repeat="${item.listChildren}">
+										<a
+											data-sly-test="${!item.hideInNav}"
+											class="second-level__item text--body"
+											href="${item.path}.html"
+											>${item.title}</a
+										>
+									</sly>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="hamburger">
+				<div class="icon"></div>
+			</div>
+			<!-- ******************* START SEARCH OVERLAY  COMPONENT ******************* -->
+			<aside class="ucg-search">
+				<div class="ucg-search__wrap">
+					<span class="ucg-search--close icon icon-close"></span>
+					<div class="panel ucg_search">
+						<div class="container">
+							<input
+								class="findAsYouType"
+								type="text"
+								name="querySearch"
+								data-resultspage="/content/unicreditgroup-eu/it/search.html"
+								placeholder="Typing"
+								data-threshold="3"
+								data-lang="it"
+							/>
+							<span class="icon icon-search"></span>
+						</div>
+						<div class="searchSuggestion">
+							<div class="autocomplete-suggestions">
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="0"
+								>
+									Typing
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="0"
+								>
+									Typing <strong>suggestion two</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="1"
+								>
+									Typing <strong>suggestion three</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="2"
+								>
+									Typing <strong>suggestion four</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="3"
+								>
+									Typing <strong>suggestion five</strong>
+								</div>
+								<div
+									class="autocomplete-suggestion text--body"
+									data-index="4"
+								>
+									Typing <strong>suggestion six</strong>
+								</div>
+							</div>
+						</div>
+						<button class="buttonLast button button--arrow">
+							MORE DETAILS
+						</button>
+					</div>
+				</div>
+			</aside>
+			<!-- ******************* END OF SEARCH OVERLAY COMPONENT ******************* -->
+		</header>
+		<div
+			data-sly-resource="${'parsys' @ resourceType='wcm/foundation/components/parsys'}"
+		></div>
+		<!-- ******************* Start of parsys component ******************* -->
+		<!-- ******************* END OF parsys COMPONENT ******************* -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="path/to/clientlib-base.js"></script>
+	</body>
+</html>

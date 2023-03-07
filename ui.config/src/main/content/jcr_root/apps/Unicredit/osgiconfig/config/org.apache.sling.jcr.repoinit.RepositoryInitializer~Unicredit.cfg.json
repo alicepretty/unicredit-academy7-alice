@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/Unicredit",
+        "create path (nt:unstructured) /content/dam/Unicredit/jcr:content",
+        "set properties on /content/dam/Unicredit/jcr:content\n  set cq:conf{String} to /conf/Unicredit\n  set jcr:title{String} to \"Unicredit Academy7 Sites Project\"\nend"
+    ]
+}

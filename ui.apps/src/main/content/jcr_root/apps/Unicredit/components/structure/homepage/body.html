@@ -1,0 +1,16 @@
+
+		<div
+			data-sly-resource="${'/content/Unicredit/en/jcr:content/homepage' @ resourceType='Unicredit/components/content/homepage'}"
+			data-sly-unwrap
+		></div>
+		
+		<div
+			data-sly-resource="${'/content/Unicredit/en/jcr:content/footer' @ resourceType='Unicredit/components/content/footer'}"
+			data-sly-unwrap
+		></div>
+
+		<sly
+			data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+			data-sly-call="${clientlib.js @ categories=['Unicredit.base']}"
+		/>
+		

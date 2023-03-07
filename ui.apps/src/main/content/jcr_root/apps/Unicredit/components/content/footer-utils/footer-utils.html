@@ -1,0 +1,11 @@
+<div class="footer__utils">
+<sly data-sly-list.stateMultifield="${resource.getChildren}">
+  <sly data-sly-test="${stateMultifield.name == 'texts'}">
+   <sly data-sly-list.items="${stateMultifield.getChildren}">
+       <a href="${items.linkURL}.html" target="${items.target}">
+        ${items.text}
+            </a>
+    </sly>
+  </sly>
+</sly>
+</div>

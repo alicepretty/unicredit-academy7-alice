@@ -1,0 +1,10 @@
+
+<sly data-sly-list.stateMultifield="${resource.getChildren}">
+  <sly data-sly-test="${stateMultifield.name == 'texts'}">
+   <sly data-sly-list.items="${stateMultifield.getChildren}">
+       <a href="${items.URl}" target="${items.target}">
+              <span class="${items.icon}"></span>
+            </a>
+    </sly>
+  </sly>
+</sly>
