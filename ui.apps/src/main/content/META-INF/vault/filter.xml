@@ -4,4 +4,5 @@
     <filter root="/apps/ucs-exercise-alice/components"/>
     <filter root="/apps/ucs-exercise-alice/templates"/>
     <filter root="/apps/ucs-exercise-alice/i18n"/>
+     
 </workspaceFilter>

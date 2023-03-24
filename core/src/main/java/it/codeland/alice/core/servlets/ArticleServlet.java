@@ -38,8 +38,10 @@ public class ArticleServlet extends SlingSafeMethodsServlet {
             final SlingHttpServletResponse resp) throws ServletException, IOException {
                 ArticleBean article = new ArticleBean();
                 SimpleDateFormat format1 = new SimpleDateFormat("E dd MMM yyyy");
+                  //Date date =new SimpleDateFormat( "yyyy-MM-dd").parse(datestr);
 
                 try {
+                    //Retrieve the article properties
                     Resource resource = req.getResource();
                     Resource res = resource.getChild("jcr:content");
                     ValueMap art = res.adaptTo(ValueMap.class);
@@ -48,19 +50,22 @@ public class ArticleServlet extends SlingSafeMethodsServlet {
                     String img = art.get("image", String.class);
                     String[] tags = art.get("cq:tags", String[].class);
                     String url = res.getParent().getPath()+".html";
-                    Date dte = art.get("date", Date.class);
+                    String dte = art.get("date", String.class);
 
                     article.setTitle(title);
                     article.setArticleAbstract(text);
                     article.setImage(img);
-                    article.setDate(format1.format(dte));
+                    article.setDate(dte);
                     article.setTags(tags);
                     article.setLink(url);
-
+                   
+                    // Create a JSON object and populate it with the article properties
                     ObjectMapper mapper = new ObjectMapper();
                     String jsonString = mapper.writeValueAsString(article);
                     resp.setCharacterEncoding("UTF-8");
+                    // Set the response content type to JSON
                     resp.setContentType("application/json");
+                    // Write the JSON object as the servlet response
                     resp.getWriter().write(jsonString);
                 } catch (Exception e) {
                     log.error(e.getMessage(), e);

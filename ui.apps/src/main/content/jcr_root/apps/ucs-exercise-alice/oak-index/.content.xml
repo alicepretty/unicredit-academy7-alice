@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    xmlns:rep="internal" jcr:primaryType="sling:Folder"> 
+    <myIndex compatVersion="{Long}2" async="async" jcr:primaryType="oak:QueryIndexDefinition"
+    seed="{Long}-3569609409131363323" forceReindex="{Boolean}true"
+    allowIndexDefinitions="{Boolean}true"
+    evaluatePathRestrictions="{Boolean}true" type="lucene">
+    <indexRules jcr:primaryType="nt:unstructured">
+    <cq:PageContent jcr:primaryType="nt:unstructured">
+    <properties jcr:primaryType="nt:unstructured">
+    <created name="jcr:created" ordered="{Boolean}true" jcr:primaryType="nt:unstructured" />
+    <tags name="cq:tags" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured" />
+    </properties>
+    </cq:PageContent>
+    </indexRules>
+    </myIndex>
+    </jcr:root>

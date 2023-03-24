@@ -59,7 +59,8 @@ public class RelatedHashtagServlet extends SlingSafeMethodsServlet {
                     
                     for (Node item : nodes) {
                         String title = item.getProperty("jcr:title").getString();
-                        Date date = item.getProperty("date").getDate().getTime();
+                        String datestr = item.getProperty("date").getString();
+                        Date date =new SimpleDateFormat( "yyyy-MM-dd").parse(datestr);
                         String image = item.getProperty("image").getString();
                         String text = item.getProperty("text").getString();
                         String url = item.getParent().getPath()+".html";

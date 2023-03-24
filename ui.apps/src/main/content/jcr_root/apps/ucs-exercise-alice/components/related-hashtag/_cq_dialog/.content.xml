@@ -83,6 +83,29 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldLabel="Close label"
                                 name="./closeLabel"/>
+                                <states
+
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldDescription="Click '+' to add a new article path"
+                                composite="{Boolean}false">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./article">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <linkURL
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldDescription="Make the image a link to another resource."
+                                            fieldLabel="Link"
+                                            nodeTypes="dam:Asset, nt:file, nt:folder, cq:Page,  sling:Folder, sling:OrderedFolder"
+                                            name="./link"
+                                            required="{Boolean}true"
+                                            rootPath="/content/ucs-exercise-alice/magazine" />
+                                    </items>
+                                </field>
+                            </states>
                         </items>
                     </column>
                 </items>

@@ -113,7 +113,7 @@ $(document).ready(function () {
           ).last();
 
           lastCard.attr("href", cardData.link);
-
+         if(cardData.hardcoded)lastCard.css("border","1px solid black");
           lastCard
             .find(".card__bg")
             .attr("data-bg", cardData.image)
@@ -145,12 +145,25 @@ $(document).ready(function () {
       addBg($(window).width());
     }
     $(".relatedHashtag__result .swiper-slide").remove();
+     const listJSON = document
+			.querySelector('.relatedHashtag__result .result__cards')
+			.getAttribute('data-articles-list');
+      console.log('================', listJSON);
+		const hardcodedArticles =
+			listJSON && listJSON.length ? JSON.parse(listJSON) : [];
+		
 
     $.ajax({
-		url: `/bin/relatedtags?tag=${tag}&len=${length}&order=${order}&sort=${sort}`,
+		url: `/bin/relatedtags?tag=${tag}&len=${length}&order=date&sort=ASC`,
 		type: 'GET',
 		success: function (res) {
-			articles = res;
+			articles = [
+				...hardcodedArticles.map((x) => ({
+					...x,
+					hardcoded: true,
+				})),
+				...res,
+			];
 		},
 		complete: function () {
 			setSwiperStructure(articles);
