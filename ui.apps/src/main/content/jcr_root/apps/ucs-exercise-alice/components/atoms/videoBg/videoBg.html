@@ -1,0 +1,16 @@
+<sly data-sly-test="${!properties.fileReference}">
+  <iframe
+    width="100%"
+    height="100%"
+    style="min-height: 450px"
+    src="https://www.youtube.com/watch?v=QdsPMgHTdAo"
+  >
+  </iframe>
+</sly>
+
+<sly data-sly-test="${properties.fileReference}">
+  <video controls width="100%" height="100%">
+    <source src="${properties.fileReference}" type="video/webm" />
+    Sorry, your browser doesn't support embedded videos.
+  </video>
+</sly>

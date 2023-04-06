@@ -116,7 +116,7 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/heading"
                                                             level="{Long}2"
-                                                            text="%"/>
+                                                            text=""/>
                                                     </items>
                                                 </container>
                                             </items>

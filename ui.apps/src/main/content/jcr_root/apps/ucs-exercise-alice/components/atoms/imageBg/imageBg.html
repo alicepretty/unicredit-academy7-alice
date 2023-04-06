@@ -1,0 +1,15 @@
+<sly data-sly-use.imageRenditions="it.codeland.alice.core.models.ImageRenditionsModel" itemtype="http://schema.org/ImageObject">
+
+    <source media="(max-width:768px)"
+        srcset="${imageRenditions.mobileRenditionPath} 1x, ${imageRenditions.mobileRetinaRenditionPath} 2x">
+    <source media="(min-width:769px)"
+        srcset="${imageRenditions.desktopRenditionPath} 1x, ${imageRenditions.desktopRetinaRenditionPath} 2x">
+
+    <img height="100%" width="100%" src="${imageRenditions.desktopRenditionPath}" title="background"
+        alt="background" />
+
+</sly>
+<sly data-sly-test="${!properties.fileReference && !properties.fileMobile}">
+    <div>[ Add background Image ]</div>
+    <img height="100%" width="100%" src="https://media.istockphoto.com/vectors/thumbnail-image-vector-graphic-vector-id1147544807?k=20&m=1147544807&s=612x612&w=0&h=pBhz1dkwsCMq37Udtp9sfxbjaMl27JUapoyYpQm0anc="  alt="bg image"/>
+</sly>

@@ -82,6 +82,11 @@ $(document).ready(function () {
 var timeout;
 var checkStarted = false;
 var progressBar=0;
+var newArticle = 0
+var skippedArticle = 0;
+var errorArticle = 0;
+
+
 
 function CheckImportJob(json) {
   $.ajax({
@@ -92,16 +97,43 @@ function CheckImportJob(json) {
     success: function (data) {
       if (!checkStarted) {
         if (data["statsPercentage"] === 100) {
-          setInterval(function(){ 
+          const interval = setInterval(function(){ 
           $.ajax({
-				url: '/bin/servlets/stats',
-				type: 'get',
-				dataType: 'json',
-				contentType: 'application/json',
-				success: function (data) {
+            url: '/bin/servlets/stats',
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
 					progressBar = data['statsPercentage'];
+          newArticle = data['statsProcessedRecords'];
+          skippedArticle = data['statsSkippedRecords'];
+          errorArticle = data['statsErrorRecords'];
 					$('.progress').css('width', progressBar + '%');
 					$('.progress').html(progressBar + '%');
+          $('.result label').text(
+            ' Total Articles: ' +
+              (data['statsSkippedRecords'] +
+                data['statsProcessedRecords']),
+          );
+          $('.resultOk label').text(
+            'Article created: ' + data['statsProcessedRecords'],
+          );
+          $('.resultOk label').show();
+          $('.resultSkipped label').text(
+            'Ignored Articles: ' + data['statsSkippedRecords'],
+          );
+          $('.resultSkipped label').show();
+          $('.resultKo label').text(
+            'Articles with error: ' + data['statsErrorRecords'],
+          );
+
+          console.log("Here is progress: ", progressBar);
+          
+          if (progressBar == 100) {
+            // clearInterval(interval);
+            console.log("Here is progress completed: ", progressBar);
+              $('.loading').removeClass('loading').fadeOut();
+          }
 				},
 			});
         }, 1000);
@@ -111,7 +143,7 @@ function CheckImportJob(json) {
         }
       }
 
-      if (data["statsPercentage"] === 100) {
+      if (data["statsPercentage"] != 100) {
         clearTimeout(timeout);
         $(".result label").text("Processing: 100%");
         $(".result label").show();
@@ -123,7 +155,7 @@ function CheckImportJob(json) {
               (data["statsSkippedRecords"] + data["statsProcessedRecords"])
           );
           $(".resultOk label").text(
-            "Article created: " + data["statsProcessedRecords"]
+            " New Article created: " + data["statsProcessedRecords"]
           );
           $(".resultOk label").show();
           $(".resultSkipped label").text(
@@ -137,35 +169,35 @@ function CheckImportJob(json) {
           $(".loading").removeClass("loading--show").addClass("loading--hide");
             
         });
-      } else {
+      // } else {
         // if (checkStarted) {
-        $(".result label").text(
-          "Proccessing report: " +
-            data["statsPercentage"] +
-            "% " +
-            " | " +
-            " Total Articles Proccessed: " +
-            (data["statsSkippedRecords"] + data["statsProcessedRecords"])
-        );
-        $(".progress").css("width", data["statsPercentage"] + "%");
-        $(".progress").html(data["statsPercentage"] + "%");
+        // $(".result label").text(
+        //   "Proccessing report: " +
+        //     data["statsPercentage"] +
+        //     "% " +
+        //     " | " +
+        //     " Total Articles Proccessed: " +
+        //     (data["statsSkippedRecords"] + data["statsProcessedRecords"])
+        // );
+        // $('.progress').css('width', progressBar + '%');
+        // $('.progress').html(progressBar + '%');
         // } else {
         //   $(".result label").text("Proccessing report: 0%");
         // }
 
-        $(".result label").show();
-        $(".resultOk label").text(
-          "-New Articles created: " + data["statsProcessedRecords"]
-        );
-        $(".resultOk label").show();
-        $(".resultSkipped label").text(
-          "-Skipped articles: " + data["statsSkippedRecords"]
-        );
-        $(".resultSkipped label").show();
-        $(".resultKo label").text(
-          "-Articles with error: : " + data["statsErrorRecords"]
-        );
-        $(".resultKo label").show();
+              // $(".result label").show();
+              // $(".resultOk label").text(
+              //   "-New Articles created: " + data["statsProcessedRecords"]
+              // );
+              // $(".resultOk label").show();
+              // $(".resultSkipped label").text(
+              //   "-Skipped articles: " + data["statsSkippedRecords"]
+              // );
+              // $(".resultSkipped label").show();
+              // $(".resultKo label").text(
+              //   "-Articles with error: : " + data["statsErrorRecords"]
+              // );
+              // $(".resultKo label").show();
 
         // timeout = setTimeout(CheckImportJob, 500, json);
       }
@@ -179,4 +211,3 @@ function CheckImportJob(json) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }
-

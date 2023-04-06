@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:policy="ucs-exercise-alice/components/page/policy"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/core/components/policies/mappings">
+        <root
+            cq:policy="ucs-exercise-alice/components/container/policy_1574694950110"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/core/components/policies/mapping">
+            <container
+                cq:policy="ucs-exercise-alice/components/container/policy_1574695586800"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping">
+                    <ucs-exercise-alice jcr:primaryType="nt:unstructured">
+                        <components jcr:primaryType="nt:unstructured">
+                            <title
+                                cq:policy="ucs-exercise-alice/components/atoms/title/policy_641528232375304"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                            <paragraph
+                                cq:policy="ucs-exercise-alice/components/atoms/paragraph/policy_641562756958018"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                            <button
+                                cq:policy="ucs-exercise-alice/components/atoms/button/policy_1575031387651"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                            <imageBg
+                                cq:policy="ucs-exercise-alice/components/atoms/imageBg/policy_651483963895699"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                
+                            <card
+                                cq:policy="ucs-exercise-alice/components/atoms/card/policy_651483963895700"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                            <videoBg
+                                cq:policy="ucs-exercise-alice/components/atoms/videoBg/policy_1575032193320"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                
+                            <cardContainer
+                                cq:policy="ucs-exercise-alice/components/cardContainer/policy_1575032193321"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                        </components>
+                    </ucs-exercise-alice>
+                </container>
+        </root>
+    </jcr:content>
+</jcr:root>

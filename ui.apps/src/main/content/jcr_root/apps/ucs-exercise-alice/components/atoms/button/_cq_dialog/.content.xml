@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Button component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        emptyText="Enter button text "
+                        fieldLabel="Button Text"
+                        name="./text"/>
+                    <type
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        emptyText="Select Button type "
+                        fieldLabel="type"
+                        name="./type">
+                        <items jcr:primaryType="nt:unstructured">
+                            <option1
+                                jcr:primaryType="nt:unstructured"
+                                text="Full rounded"
+                                value="200px"/>
+                            <option2
+                                jcr:primaryType="nt:unstructured"
+                                text="rounded"
+                                value="5px"/>
+                            <option3
+                                jcr:primaryType="nt:unstructured"
+                                text="Not rounded"
+                                value="0px"/>
+                        </items>
+                    </type>
+                    <icon
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        emptyText="Select Icon name "
+                        fieldLabel="Icon"
+                        name="./icon">
+                        <items jcr:primaryType="nt:unstructured">
+                            <option1
+                                jcr:primaryType="nt:unstructured"
+                                text="Caret right"
+                                value=">"/>
+                            <option2
+                                jcr:primaryType="nt:unstructured"
+                                text="Arrow left"
+                                value="->"/>
+                        </items>
+                    </icon>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="no-touch">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="FOLLOW, INDEX" />
+
+    <!-- Page title -->
+    <title>Editable template</title>
+    <!-- Social Media Tags -->
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content="IT" />
+    <meta name="twitter:creator" content="" />
+    <sly
+      data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-call="${clientlib.all @ categories=['Unicredit.base']}"
+    />
+  </head>
+
+  <body>
+    <div class="cardsContainer">
+      <div class="cardAcademy">
+        <div
+          data-sly-test="${!properties.backgroundType}"
+          style="color: gray; text-align: center"
+        >
+          [ Click to select card type ]
+        </div>
+
+          <div
+            data-sly-test="${properties.backgroundType =='video'}"
+            class="cardBg"
+          >
+            <sly
+              data-sly-resource="${'backgroundVideo' @resourceType='/apps/ucs-exercise-alice/components/atoms/videoBg'}"
+            ></sly>
+          </div>
+           <div
+          data-sly-test="${properties.backgroundType =='image'}"
+          class="cardBg"
+        >
+          <sly
+            data-sly-resource="${'backgroundImage' @resourceType='/apps/ucs-exercise-alice/components/atoms/imageBg'}"
+          ></sly>
+        </div>
+
+        <div class="wrapper">
+          <div
+            data-sly-resource="${'title' @resourceType='/apps/ucs-exercise-alice/components/atoms/title'}"
+          ></div>
+           <div
+            data-sly-resource="${'paragraph' @resourceType='/apps/ucs-exercise-alice/components/atoms/paragraph'}"
+          ></div>
+          </div>
+          <div class="btnWrapper">
+            <div
+              data-sly-resource="${'button' @resourceType='/apps/ucs-exercise-alice/components/atoms/button'}"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

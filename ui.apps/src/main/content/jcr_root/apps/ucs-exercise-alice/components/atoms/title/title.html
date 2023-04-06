@@ -1,0 +1,18 @@
+<div
+  class="atomsTitle"
+  style="color: ${properties.color @context='unsafe'}; font-size:${properties.size @context='unsafe'}; padding: ${properties.padding @context='unsafe'}"
+>
+  <h1 style="text-transform: ${properties.textTransform @context='unsafe'}">
+    ${properties.title @context='html'}<span
+      data-sly-test="${!properties.title}"
+      >[ Add title]</span
+    >
+  </h1>
+  <div class="parent_underline">
+    <div
+      data-sly-test="${properties.title}"
+      style="border-color: ${properties.color @context='unsafe'}"
+      class="underline"
+    ></div>
+  </div>
+</div>
